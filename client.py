@@ -2,9 +2,7 @@ import socket
 
 s = socket.socket()
 
-port = 5049
-
-s.connect(('192.168.110.175',port))
+s.connect(('5w308173f5.eicp.vip', 27284))
 
 print(s.recv(1024).decode())
 s.close()
