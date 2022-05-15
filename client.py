@@ -1,13 +1,10 @@
 import socket
 
-from zmq import STREAM
+s = socket.socket()
 
-size = 64
-port = 5050
-format = 'utf-8'
-disconnect_msg = 'disconnect'
-server = "192.168.110.125"
-addr = (server, port)
+port = 5049
 
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(addr)
+s.connect(('192.168.110.175',port))
+
+print(s.recv(1024).decode())
+s.close()
